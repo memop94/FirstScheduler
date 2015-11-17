@@ -4,10 +4,10 @@
 /*                        OBJECT SPECIFICATION                                */
 /*============================================================================*/
 /*!
- * $Source: TASK_Init.h $
+ * $Source: GPIO_APP.c $
  * $Revision: 1.0 $
  * $Author: Guillermo Ramirez $
- * $Date: 13/11/2015 $
+ * $Date: 17/11/2015 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
@@ -39,55 +39,59 @@
 /*                               OBJECT HISTORY                               */
 /*============================================================================*/
 /*
- * $Log: TASK_Init.h  $
+ * $Log: filename.c  $
   ============================================================================*/
-#ifndef TASK_Init_H
-#define TASK_Init_H
 
 /* Includes */
 /*============================================================================*/
-#include "MPC5606B.h"
-#include "stdtypedef.h"
-#include "driver_channel_MPC5606B.h"
-#include "IntcInterrupts.h"
-#include "Global_Init.h"
-#include "OS_Init.h"
 #include "GPIO_APP.h"
 
-/* Constants and types */
-/*============================================================================*/
 
-typedef struct {
-	void(* rp_Tasks)(void); /*Pointer that'll call the task*/
-	T_ULONG rul_Period; /*Period of task*/
-	T_ULONG rul_Offset; /*Offset of task*/
-}S_TASK;
-
-/* The new tasks must be defined here */
-typedef enum{
-	E_TASK1, 
-	E_TASK2,
-	E_TASK3,
-	E_TASK4,
-	
-	/*DO NOT MODIFIED OR ERASE*/
-	E_TASK_NUM
-	
-}E_TASK;
-
-
-/* Exported Variables */
+/* Constants and types  */
 /*============================================================================*/
 
 
-/* Exported functions prototypes */
+
+/* Variables */
 /*============================================================================*/
-void kernel (void);
 
-/* The prototype of the function must be declared here */
-void FUN_TASK_1(void);
-void FUN_TASK_2(void);
-void FUN_TASK_3(void);
-void FUN_TASK_4(void);
 
-#endif  /* Notice: the file ends with a blank new line to avoid compiler warnings */
+
+/* Private functions prototypes */
+/*============================================================================*/
+
+
+
+/* Inline functions */
+/*============================================================================*/
+void LED_TOGGLE(T_UWORD ch)
+{
+		SIU.GPDO[ch].B.PDO ^= 1;
+}
+
+
+
+/* Private functions */
+/*============================================================================*/
+
+/** Check if action is allowed by overload protection.
+ To avoid overheating of the door locking motors and hardware failure
+ the software shall limit the number of activations in a short period.
+ This function checks if the limitation algorithm allows or not
+ a certain activation of the motors.
+ \returns TRUE if the activation is allowed, FALSE if not
+
+uint8 algreqg_olp_CheckOLPAllow(uint8 ReqestedAction_u8,       /**< the requested action to be performed (e.g. unlock) 
+                                uint16 RequestedComponent_u16  /**< the mask of the doors which motors to be activated (e.g. front doors) 
+                                )
+{
+	return 0;
+}
+*/
+
+/* Exported functions */
+/*============================================================================*/
+
+
+
+ /* Notice: the file ends with a blank new line to avoid compiler warnings */

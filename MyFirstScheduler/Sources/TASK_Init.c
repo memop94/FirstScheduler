@@ -5,9 +5,9 @@
 /*============================================================================*/
 /*!
  * $Source: TASK_Init.c $
- * $Revision: 1.0 $
+ * $Revision: 2.0 $
  * $Author: Guillermo Ramirez $
- * $Date: 13/11/2015 $
+ * $Date: 17/11/2015 $
  */
 /*============================================================================*/
 /* DESCRIPTION :                                                              */
@@ -49,13 +49,23 @@
 
 /* Constants and types  */
 /*============================================================================*/
-const S_TASK cas_TaskList[E_TASK_NUM] = {
-	{FUN_TASK_1, 	50, 	1	},
-	{FUN_TASK_2, 	100, 	3	},
-	{FUN_TASK_3, 	200, 	5	},
-	{FUN_TASK_4, 	300, 	7	}
-};
+#define taskPeriod1 50
+#define taskPeriod2 100
+#define taskPeriod3 200
+#define taskPeriod4 300
 
+#define taskOffset1 1
+#define taskOffset2 3
+#define taskOffset3 5
+#define taskOffset4 7
+
+const S_TASK cas_TaskList[E_TASK_NUM] = {
+  /*{Pointer to the function, Period, Offset}*/
+	{FUN_TASK_1, 	taskPeriod1, 	taskOffset1	},
+	{FUN_TASK_2, 	taskPeriod2, 	taskOffset2	},
+	{FUN_TASK_3, 	taskPeriod3, 	taskOffset3	},
+	{FUN_TASK_4, 	taskPeriod4, 	taskOffset4	}
+};
 
 /* Variables */
 /*============================================================================*/
@@ -67,6 +77,8 @@ extern ub_TickFlag;
 
 /* Private functions prototypes */
 /*============================================================================*/
+
+/* ---------------------------- DO NOT MODIFIED ----------------------------- */
 void kernel (void){
 	for (rul_Index = 0; rul_Index < E_TASK_NUM; rul_Index ++){
 		raul_NTask[rul_Index] = cas_TaskList[rul_Index].rul_Offset;
@@ -86,6 +98,7 @@ void kernel (void){
 			}
 		}
 	}
+/* ---------------------------- DO NOT MODIFIED ----------------------------- */
 }
 
 
@@ -95,11 +108,7 @@ void kernel (void){
 
 /* Private functions */
 /*============================================================================*/
-void LED_TOGGLE(T_UWORD ch)
-{
-		SIU.GPDO[ch].B.PDO ^= 1;
-}
-
+/* The functions of the tasks must be defined here */
 void FUN_TASK_1(void){
 	LED_TOGGLE(LED1);
 }

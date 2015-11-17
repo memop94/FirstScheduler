@@ -7,70 +7,70 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS_QUOTED += \
 "../Sources/Exceptions.c" \
+"../Sources/GPIO_APP.c" \
 "../Sources/Global_Init.c" \
 "../Sources/IntcInterrupts.c" \
 "../Sources/OS_Init.c" \
-"../Sources/SW_TMP_HeaderC_History.c" \
 "../Sources/TASK_Init.c" \
 "../Sources/ivor_branch_table.c" \
 "../Sources/main.c" \
 
 C_SRCS += \
 ../Sources/Exceptions.c \
+../Sources/GPIO_APP.c \
 ../Sources/Global_Init.c \
 ../Sources/IntcInterrupts.c \
 ../Sources/OS_Init.c \
-../Sources/SW_TMP_HeaderC_History.c \
 ../Sources/TASK_Init.c \
 ../Sources/ivor_branch_table.c \
 ../Sources/main.c \
 
 OBJS += \
 ./Sources/Exceptions_c.obj \
+./Sources/GPIO_APP_c.obj \
 ./Sources/Global_Init_c.obj \
 ./Sources/IntcInterrupts_c.obj \
 ./Sources/OS_Init_c.obj \
-./Sources/SW_TMP_HeaderC_History_c.obj \
 ./Sources/TASK_Init_c.obj \
 ./Sources/ivor_branch_table_c.obj \
 ./Sources/main_c.obj \
 
 OBJS_QUOTED += \
 "./Sources/Exceptions_c.obj" \
+"./Sources/GPIO_APP_c.obj" \
 "./Sources/Global_Init_c.obj" \
 "./Sources/IntcInterrupts_c.obj" \
 "./Sources/OS_Init_c.obj" \
-"./Sources/SW_TMP_HeaderC_History_c.obj" \
 "./Sources/TASK_Init_c.obj" \
 "./Sources/ivor_branch_table_c.obj" \
 "./Sources/main_c.obj" \
 
 C_DEPS += \
 ./Sources/Exceptions_c.d \
+./Sources/GPIO_APP_c.d \
 ./Sources/Global_Init_c.d \
 ./Sources/IntcInterrupts_c.d \
 ./Sources/OS_Init_c.d \
-./Sources/SW_TMP_HeaderC_History_c.d \
 ./Sources/TASK_Init_c.d \
 ./Sources/ivor_branch_table_c.d \
 ./Sources/main_c.d \
 
 OBJS_OS_FORMAT += \
 ./Sources/Exceptions_c.obj \
+./Sources/GPIO_APP_c.obj \
 ./Sources/Global_Init_c.obj \
 ./Sources/IntcInterrupts_c.obj \
 ./Sources/OS_Init_c.obj \
-./Sources/SW_TMP_HeaderC_History_c.obj \
 ./Sources/TASK_Init_c.obj \
 ./Sources/ivor_branch_table_c.obj \
 ./Sources/main_c.obj \
 
 C_DEPS_QUOTED += \
 "./Sources/Exceptions_c.d" \
+"./Sources/GPIO_APP_c.d" \
 "./Sources/Global_Init_c.d" \
 "./Sources/IntcInterrupts_c.d" \
 "./Sources/OS_Init_c.d" \
-"./Sources/SW_TMP_HeaderC_History_c.d" \
 "./Sources/TASK_Init_c.d" \
 "./Sources/ivor_branch_table_c.d" \
 "./Sources/main_c.d" \
@@ -90,9 +90,17 @@ Sources/%.d: ../Sources/%.c
 	
 	@echo ' '
 
-Sources/Global_Init_c.obj: ../Sources/Global_Init.c
+Sources/GPIO_APP_c.obj: ../Sources/GPIO_APP.c
 	@echo 'Building file: $<'
 	@echo 'Executing target #2 $<'
+	@echo 'Invoking: PowerPC Compiler'
+	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/GPIO_APP.args" -o "Sources/GPIO_APP_c.obj" "$<" -MD -gccdep
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Sources/Global_Init_c.obj: ../Sources/Global_Init.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #3 $<'
 	@echo 'Invoking: PowerPC Compiler'
 	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/Global_Init.args" -o "Sources/Global_Init_c.obj" "$<" -MD -gccdep
 	@echo 'Finished building: $<'
@@ -100,7 +108,7 @@ Sources/Global_Init_c.obj: ../Sources/Global_Init.c
 
 Sources/IntcInterrupts_c.obj: ../Sources/IntcInterrupts.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #3 $<'
+	@echo 'Executing target #4 $<'
 	@echo 'Invoking: PowerPC Compiler'
 	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/IntcInterrupts.args" -o "Sources/IntcInterrupts_c.obj" "$<" -MD -gccdep
 	@echo 'Finished building: $<'
@@ -108,17 +116,9 @@ Sources/IntcInterrupts_c.obj: ../Sources/IntcInterrupts.c
 
 Sources/OS_Init_c.obj: ../Sources/OS_Init.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #4 $<'
-	@echo 'Invoking: PowerPC Compiler'
-	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/OS_Init.args" -o "Sources/OS_Init_c.obj" "$<" -MD -gccdep
-	@echo 'Finished building: $<'
-	@echo ' '
-
-Sources/SW_TMP_HeaderC_History_c.obj: ../Sources/SW_TMP_HeaderC_History.c
-	@echo 'Building file: $<'
 	@echo 'Executing target #5 $<'
 	@echo 'Invoking: PowerPC Compiler'
-	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/SW_TMP_HeaderC_History.args" -o "Sources/SW_TMP_HeaderC_History_c.obj" "$<" -MD -gccdep
+	"$(PAToolsDirEnv)/mwcceppc" @@"Sources/OS_Init.args" -o "Sources/OS_Init_c.obj" "$<" -MD -gccdep
 	@echo 'Finished building: $<'
 	@echo ' '
 

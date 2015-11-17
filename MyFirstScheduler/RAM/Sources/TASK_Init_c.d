@@ -18,4 +18,5 @@ Sources/TASK_Init_c.obj: C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\
 	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\driver_channel_MPC5606B.h \
 	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\IntcInterrupts.h \
 	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\Global_Init.h \
-	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\OS_Init.h 
+	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\OS_Init.h \
+	C:\Users\GuillermoFrancisco\workspace\MyFirstScheduler\Project_Headers\GPIO_APP.h 
