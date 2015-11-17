@@ -44,13 +44,13 @@
 
 /* Includes */
 /*============================================================================*/
-#include "MPC5606B.h"
+#include "HAL\MPC5606B.h"
 #include "stdtypedef.h"
-#include "driver_channel_MPC5606B.h"
-#include "IntcInterrupts.h"
-#include "Global_Init.h"
-#include "OS_Init.h"
-#include "TASK_Init.h"
+#include "HAL\driver_channel_MPC5606B.h"
+#include "HAL\IntcInterrupts.h"
+#include "HAL\Global_Init.h"
+#include "MAL\OS_Init.h"
+#include "API\TASK_Init.h"
 
 /* Constants and types  */
 /*============================================================================*/

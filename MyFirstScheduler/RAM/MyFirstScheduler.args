@@ -2,14 +2,14 @@
 "./Project_Settings/Startup_Code/MPC5606B_init_ram_c.obj"
 "./Project_Settings/Startup_Code/MPC5606B_Startup_c.obj"
 "./Project_Settings/Startup_Code/MPC5606B_HWInit_c.obj"
+"./Sources/API/TASK_Init_c.obj"
+"./Sources/HAL/ivor_branch_table_c.obj"
+"./Sources/HAL/IntcInterrupts_c.obj"
+"./Sources/HAL/Global_Init_c.obj"
+"./Sources/HAL/GPIO_APP_c.obj"
+"./Sources/HAL/Exceptions_c.obj"
+"./Sources/MAL/OS_Init_c.obj"
 "./Sources/main_c.obj"
-"./Sources/ivor_branch_table_c.obj"
-"./Sources/TASK_Init_c.obj"
-"./Sources/OS_Init_c.obj"
-"./Sources/IntcInterrupts_c.obj"
-"./Sources/Global_Init_c.obj"
-"./Sources/GPIO_APP_c.obj"
-"./Sources/Exceptions_c.obj"
 -sym dwarf-2
 -sym full
 -msgstyle parseable

@@ -59,18 +59,18 @@ Link map of __startup
     3] .init.11 (notype,local) found in MPC5606B_init_ram_c.obj 
     3] .init (section,local) found in MPC5606B_Startup_c.obj 
     3] .init.21 (notype,local) found in MPC5606B_Startup_c.obj 
-    3] .text (section,local) found in main_c.obj 
-    3] .text.16 (notype,local) found in main_c.obj 
-    3] .ivor_branch_table (section,local) found in ivor_branch_table_c.obj 
-    3] .ivor_branch_table.24 (notype,local) found in ivor_branch_table_c.obj 
     3] .text (section,local) found in TASK_Init_c.obj 
     3] .text.57 (notype,local) found in TASK_Init_c.obj 
-    3] .text (section,local) found in OS_Init_c.obj 
-    3] .text.17 (notype,local) found in OS_Init_c.obj 
+    3] .ivor_branch_table (section,local) found in ivor_branch_table_c.obj 
+    3] .ivor_branch_table.24 (notype,local) found in ivor_branch_table_c.obj 
     3] .text (section,local) found in Global_Init_c.obj 
     3] .text.47 (notype,local) found in Global_Init_c.obj 
     3] .text (section,local) found in GPIO_APP_c.obj 
     3] .text.13 (notype,local) found in GPIO_APP_c.obj 
+    3] .text (section,local) found in OS_Init_c.obj 
+    3] .text.17 (notype,local) found in OS_Init_c.obj 
+    3] .text (section,local) found in main_c.obj 
+    3] .text.16 (notype,local) found in main_c.obj 
     3] .text (section,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
     3] .text.86 (notype,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
     3] .init (section,local) found in librt_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_Runtime\Runtime_PA_CmdLineData\librt_E200z0_VLE_Soft\obj\__start.o
@@ -81,8 +81,8 @@ Link map of __startup
     3] .text.205 (notype,local) found in librt_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_Runtime\Runtime_PA_CmdLineData\librt_E200z0_VLE_Soft\obj\runtime.o
     3] .text (section,local) found in MPC5606B_HWInit_c.obj 
     3] .text.13 (notype,local) found in MPC5606B_HWInit_c.obj 
-    3] .text (section,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-    3] .text.500 (notype,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
+    3] .text (section,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+    3] .text.174 (notype,local) found in libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
 
 
 .ivor_branch_table section layout
@@ -165,56 +165,35 @@ Link map of __startup
   UNUSED   000050 ........ ........    INIT_Derivative MPC5606B_HWInit_c.obj 
   UNUSED   000002 ........ ........    INIT_ExternalBusAndMemory MPC5606B_HWInit_c.obj 
   00000052 000000 40001382 000005d2  1 .text.13 	MPC5606B_HWInit_c.obj 
-  00000052 00002c 40001382 000005d2  1 .text 	main_c.obj 
-  00000052 00002c 40001382 000005d2  2 main 	main_c.obj 
-  0000007e 000000 400013ae 000005fe  1 .text.16 	main_c.obj 
-  0000007e 00013c 400013ae 000005fe  1 .text 	TASK_Init_c.obj 
-  0000007e 0000dc 400013ae 000005fe  2 kernel 	TASK_Init_c.obj 
-  0000015a 000018 4000148a 000006da  2 FUN_TASK_1 	TASK_Init_c.obj 
-  00000172 000018 400014a2 000006f2  2 FUN_TASK_2 	TASK_Init_c.obj 
-  0000018a 000018 400014ba 0000070a  2 FUN_TASK_3 	TASK_Init_c.obj 
-  000001a2 000018 400014d2 00000722  2 FUN_TASK_4 	TASK_Init_c.obj 
-  000001ba 000000 400014ea 0000073a  1 .text.57 	TASK_Init_c.obj 
-  000001ba 000034 400014ea 0000073a  1 .text 	OS_Init_c.obj 
-  000001ba 000034 400014ea 0000073a  2 Tick_Flag 	OS_Init_c.obj 
-  000001ee 000000 4000151e 0000076e  1 .text.17 	OS_Init_c.obj 
-  000001ee 00004e 4000151e 0000076e  1 .text 	IntcInterrupts_c.obj 
-  000001ee 00002c 4000151e 0000076e  2 INTC_InstallINTCInterruptHandler 	IntcInterrupts_c.obj 
-  0000021a 000022 4000154a 0000079a  2 INTC_InitINTCInterrupts 	IntcInterrupts_c.obj 
-  0000023c 00018e 4000156c 000007bc  1 .text 	Global_Init_c.obj 
-  0000023c 000020 4000156c 000007bc  2 Global_Init 	Global_Init_c.obj 
-  0000025c 00000c 4000158c 000007dc  2 INTC_init 	Global_Init_c.obj 
-  00000268 00006c 40001598 000007e8  2 STM_init 	Global_Init_c.obj 
-  000002d4 00009c 40001604 00000854  2 initModesAndClock 	Global_Init_c.obj 
-  00000370 000040 400016a0 000008f0  2 GPIO_Init 	Global_Init_c.obj 
-  000003b0 00001a 400016e0 00000930  2 GPIO_En 	Global_Init_c.obj 
-  000003ca 000000 400016fa 0000094a  1 .text.47 	Global_Init_c.obj 
-  000003ca 000026 400016fa 0000094a  1 .text 	GPIO_APP_c.obj 
-  000003ca 000026 400016fa 0000094a  2 LED_TOGGLE 	GPIO_APP_c.obj 
-  000003f0 000000 40001720 00000970  1 .text.13 	GPIO_APP_c.obj 
-  000003f0 00000e 40001720 00000970  1 .text 	Exceptions_c.obj 
-  000003f0 00000e 40001720 00000970  2 EXCEP_InitExceptionHandlers 	Exceptions_c.obj 
-  000003fe 000000 4000172e 0000097e  1 .text 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00002c ........ ........    __FileWrite libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00001e ........ ........    __ConsoleWrite libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00003a ........ ........    __StringWrite libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000060 ........ ........    printf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00006e ........ ........    printf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00004c ........ ........    printf_console libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000064 ........ ........    printf_s_console libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00001e ........ ........    vprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00003c ........ ........    vprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000018 ........ ........    vfprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00003a ........ ........    vfprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00004c ........ ........    vsnprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   00007a ........ ........    vsnprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000008 ........ ........    vsprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000054 ........ ........    vsprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000040 ........ ........    snprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000040 ........ ........    snprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000042 ........ ........    sprintf libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  UNUSED   000040 ........ ........    sprintf_s libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
-  000003fe 000000 4000172e 0000097e  1 .text.500 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\printf.o
+  00000052 00013c 40001382 000005d2  1 .text 	TASK_Init_c.obj 
+  00000052 0000dc 40001382 000005d2  2 kernel 	TASK_Init_c.obj 
+  0000012e 000018 4000145e 000006ae  2 FUN_TASK_1 	TASK_Init_c.obj 
+  00000146 000018 40001476 000006c6  2 FUN_TASK_2 	TASK_Init_c.obj 
+  0000015e 000018 4000148e 000006de  2 FUN_TASK_3 	TASK_Init_c.obj 
+  00000176 000018 400014a6 000006f6  2 FUN_TASK_4 	TASK_Init_c.obj 
+  0000018e 000000 400014be 0000070e  1 .text.57 	TASK_Init_c.obj 
+  0000018e 00004e 400014be 0000070e  1 .text 	IntcInterrupts_c.obj 
+  0000018e 00002c 400014be 0000070e  2 INTC_InstallINTCInterruptHandler 	IntcInterrupts_c.obj 
+  000001ba 000022 400014ea 0000073a  2 INTC_InitINTCInterrupts 	IntcInterrupts_c.obj 
+  000001dc 00018e 4000150c 0000075c  1 .text 	Global_Init_c.obj 
+  000001dc 000020 4000150c 0000075c  2 Global_Init 	Global_Init_c.obj 
+  000001fc 00000c 4000152c 0000077c  2 INTC_init 	Global_Init_c.obj 
+  00000208 00006c 40001538 00000788  2 STM_init 	Global_Init_c.obj 
+  00000274 00009c 400015a4 000007f4  2 initModesAndClock 	Global_Init_c.obj 
+  00000310 000040 40001640 00000890  2 GPIO_Init 	Global_Init_c.obj 
+  00000350 00001a 40001680 000008d0  2 GPIO_En 	Global_Init_c.obj 
+  0000036a 000000 4000169a 000008ea  1 .text.47 	Global_Init_c.obj 
+  0000036a 000026 4000169a 000008ea  1 .text 	GPIO_APP_c.obj 
+  0000036a 000026 4000169a 000008ea  2 LED_TOGGLE 	GPIO_APP_c.obj 
+  00000390 000000 400016c0 00000910  1 .text.13 	GPIO_APP_c.obj 
+  00000390 00000e 400016c0 00000910  1 .text 	Exceptions_c.obj 
+  00000390 00000e 400016c0 00000910  2 EXCEP_InitExceptionHandlers 	Exceptions_c.obj 
+  0000039e 000034 400016ce 0000091e  1 .text 	OS_Init_c.obj 
+  0000039e 000034 400016ce 0000091e  2 Tick_Flag 	OS_Init_c.obj 
+  000003d2 000000 40001702 00000952  1 .text.17 	OS_Init_c.obj 
+  000003d2 00002c 40001702 00000952  1 .text 	main_c.obj 
+  000003d2 00002c 40001702 00000952  2 main 	main_c.obj 
+  000003fe 000000 4000172e 0000097e  1 .text.16 	main_c.obj 
   000003fe 000040 4000172e 0000097e  1 .text 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
   UNUSED   00002c ........ ........    abort libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
   UNUSED   000004 ........ ........    atexit libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
@@ -222,6 +201,15 @@ Link map of __startup
   UNUSED   00002a ........ ........    __atexit libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
   UNUSED   000056 ........ ........    __exit libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
   0000043e 000000 4000176e 000009be  1 .text.86 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\abort_exit.o
+  0000043e 000000 4000176e 000009be  1 .text 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   000004 ........ ........    get_stack_pointer libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   000032 ........ ........    brk libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   000030 ........ ........    sbrk libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   00011c ........ ........    malloc libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   00005e ........ ........    realloc libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   000010 ........ ........    free libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  UNUSED   000048 ........ ........    calloc libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
+  0000043e 000000 4000176e 000009be  1 .text.174 	libc_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_C\EWL_C.PA_CmdLineData\libc_E200z0_VLE_Soft\obj\alloc.o
   0000043e 000032 4000176e 000009be  1 .text 	librt_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_Runtime\Runtime_PA_CmdLineData\librt_E200z0_VLE_Soft\obj\global_destructor_chain.o
   UNUSED   000010 ........ ........    __register_global_object librt_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_Runtime\Runtime_PA_CmdLineData\librt_E200z0_VLE_Soft\obj\global_destructor_chain.o
   0000043e 000032 4000176e 000009be  2 __destroy_global_chain 	librt_E200z0_VLE_Soft.a D:\w\EPPC\workspace_codegen\ewl\EWL_Runtime\Runtime_PA_CmdLineData\librt_E200z0_VLE_Soft\obj\global_destructor_chain.o
@@ -469,12 +457,12 @@ Memory map:
                .sdata2 40001bc4 00000000 00001000          0
                 .sbss2 40001bc4 00000000 00001000          0
                   .bss 40001bc8 00000010 00001000          0
-      .PPC.EMB.apuinfo 000063bc 00000000 000073c0          0
+      .PPC.EMB.apuinfo 00006848 00000000 00007850          0
          .debug_abbrev          00000157 00001000
-           .debug_info          00001bb7 00001157
-           .debug_line          00003103 00002d0e
-            .debug_loc          0000045d 00005e11
-       .debug_pubnames          00000486 0000626e
+           .debug_info          00001c66 00001157
+           .debug_line          000034e0 00002dbd
+            .debug_loc          0000045d 0000629d
+       .debug_pubnames          00000486 000066fa
 
 
 Linker generated symbols:
